@@ -7,7 +7,7 @@
     <!-- (1) <parent/> -->
 
     <!-- (2) <groupId/> -->
-    <groupId>edu.ucsb.cs56.pconrad.menuitem</groupId>
+    <groupId>edu.vt.cs3704.awh4kc.menuitem</groupId>
 
     <!-- (3) <artifactId/> -->
 
@@ -20,7 +20,7 @@
     <!-- (6) <name/> -->
     <!-- (7) <description/> -->
 
-    <description>jpa01 for CS156, W22</description>
+    <description>jpa01 for CS3704, S23</description>
 
     <!-- (8) <url/> -->
     <!-- (9) <inceptionYear/> -->

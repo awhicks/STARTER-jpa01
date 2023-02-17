@@ -1,4 +1,4 @@
-package edu.ucsb.cs56.pconrad.menuitem;
+package edu.vt.cs3704.awh4kc.menuitem;
 
 public class MenuItem {
 
