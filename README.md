@@ -1,6 +1,6 @@
 # STARTER-jpa01
 
-Starter code for https://ucsb-cs156.github.io/w22/lab/jpa01/
+Starter code for https://canvas.vt.edu/courses/165554/assignments/1746171
 
 
 # Testing with Junit
