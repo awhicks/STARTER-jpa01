@@ -1,58 +1,51 @@
 package edu.vt.cs3704.awh4kc.menuitem;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.Test;
+import org.junit.Before;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Test;
 
 public class MenuItemTest {
 
     private MenuItem smallPokeBowl;
 
+    @Before
+    public void setUp() {
+        smallPokeBowl = new MenuItem("Small Poke Bowl", 1049, "Poke Bowls");
+    }
 
     @Test
     public void test_getPrice() {
-        smallPokeBowl = new MenuItem("Small Poke Bowl", 1049, "Poke Bowls");
         assertEquals("$10.49", smallPokeBowl.getPrice());
     }
 
     @Test
     public void test_getPrice_10() {
-        smallPokeBowl = new MenuItem("Small Poke Bowl", 1049, "Poke Bowls");
         assertEquals("    $10.49", smallPokeBowl.getPrice(10));
     }
 
     @Test
     public void test_getPrice_7() {
-        smallPokeBowl = new MenuItem("Small Poke Bowl", 1049, "Poke Bowls");
         assertEquals(" $10.49", smallPokeBowl.getPrice(7));
     }
 
     @Test
     public void test_getPrice_6() {
-        smallPokeBowl = new MenuItem("Small Poke Bowl", 1049, "Poke Bowls");
         assertEquals("$10.49", smallPokeBowl.getPrice(6));
     }
 
-    @Test
+    @Test(expected = MenuItem.TooNarrowException.class)
     public void test_getPrice_5() {
-        assertThrows(MenuItem.TooNarrowException.class, () -> {
-            smallPokeBowl = new MenuItem("Small Poke Bowl", 1049, "Poke Bowls");
-            smallPokeBowl.getPrice(5);
-        });
+        smallPokeBowl.getPrice(5);
     }
 
-    @Test
+    @Test(expected = MenuItem.TooNarrowException.class)
     public void test_getPrice_0() {
-        assertThrows(MenuItem.TooNarrowException.class, () -> {
-            smallPokeBowl = new MenuItem("Small Poke Bowl", 1049, "Poke Bowls");
-            smallPokeBowl.getPrice(0);
-        });
+        smallPokeBowl.getPrice(0);
     }
 
     @Test
     public void test_toString() {
-        smallPokeBowl = new MenuItem("Small Poke Bowl", 1049, "Poke Bowls");
         assertEquals("Small Poke Bowl,1049,Poke Bowls", smallPokeBowl.toString());
     }
 
