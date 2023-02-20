@@ -46,9 +46,11 @@
     <!-- (23) <dependencies/> -->
 
 
+
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-        <dependency>
+        <!-- <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.8.2</version>
@@ -58,6 +60,12 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency> -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -77,15 +85,6 @@
                     <release>17</release>
                 </configuration>
             </plugin>
-
-            <!-- needed to get JUnit 5 tests to run -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
-                <version>2.22.0</version>
-            </plugin>
-
 
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -111,14 +110,6 @@
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
                 <version>1.7.3</version>
-                <!-- this is needed to run pitest with JUnit 5 -->
-                <dependencies>
-                    <dependency>
-                        <groupId>org.pitest</groupId>
-                        <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.14</version>
-                    </dependency>
-                </dependencies>
                 <configuration>
                     <verbose>true</verbose>
                     <targetClasses>
